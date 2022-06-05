@@ -45,6 +45,11 @@ com! DisableAutoSave AutoSave 0
 com! EnableAutoSave  AutoSave g:autosave_timer
 com! -bang AutoSaveThisBuffer call <sid>Autosave_this(<bang>0)
 
+augroup AutoSaveTriggerEvents
+  autocmd!
+  au BufLeave,FocusLost !silent call <sid>Autosave_DoSave(g:autosave_timer)
+augroup END
+
 " functions {{{1
 func! Autosave_this(bang) "{{{2
   if !a:bang

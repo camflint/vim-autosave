@@ -47,7 +47,7 @@ com! -bang AutoSaveThisBuffer call <sid>Autosave_this(<bang>0)
 
 augroup AutoSaveTriggerEvents
   autocmd!
-  au BufLeave,FocusLost * call <sid>Autosave_DoSave(s:autosave_timer)
+  au BufLeave,FocusLost * call Autosave_DoSave(s:autosave_timer)
 augroup END
 
 " functions {{{1

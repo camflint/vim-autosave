@@ -230,7 +230,7 @@ func! <sid>SetupTimer(enable) abort "{{{2
       let msg = "Warning: Timer value must be given in millisecods and can't be > 100*60*1000 (100 minutes) or < 1000 (1 second)"
     else
       let g:autosave_timer = a:enable
-      let s:autosave_timer=timer_start(g:autosave_timer, '<sid>Autosave_DoSave', {'repeat': -1})
+      let s:autosave_timer=timer_start(g:autosave_timer, <sid>Autosave_DoSave, {'repeat': -1})
     endif
   elseif exists('s:autosave_timer')
     call timer_stop(s:autosave_timer)

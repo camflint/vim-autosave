@@ -44,6 +44,7 @@ com! -nargs=? AutoSave call <sid>SetupTimer(<q-args>)
 com! DisableAutoSave AutoSave 0
 com! EnableAutoSave  AutoSave g:autosave_timer
 com! -bang AutoSaveThisBuffer call <sid>Autosave_this(<bang>0)
+com! AutoSaveNow call <sid>Autosave_DoSave(s:autosave_timer)
 
 augroup AutoSaveTriggerEvents
   autocmd!
